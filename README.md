@@ -9,11 +9,11 @@ go get github.com/itrepablik/lumberjack
 ```
 
 # Modified Version of Lumberjack
-The main reason why we have some modified version of Lumberjack package because of this line [#222](https://github.com/natefinch/lumberjack/blob/v2.0/lumberjack.go) from the original source code of Lumberjack.  This function **openNew** will be executed during the log rotation which **renamed** the existing backup log file that exceeds the **MaxSize** in megabytes.
+The main reason why we have some modified version of the Lumberjack package because of this line [#222](https://github.com/natefinch/lumberjack/blob/v2.0/lumberjack.go) from the original source code of Lumberjack.  This function **openNew** will be executed during the log rotation which **renamed** the existing backup log file that exceeds the **MaxSize** in megabytes.
 
-In our case and usage, we have constantly rotating backup scheduler program that keeps logging everytime, this issue occurs as the file can't be renamed because it's open and use by another program error and that's a strange issue that even the existing close file function of Lumberjack can't close the existing used log file and then rename it.
+In our case and usage, we have constantly rotating backup scheduler program that keeps logging every time, this issue occurs as the file can't be renamed because it's open and use by another program error and that's a strange issue that even the existing close file function of Lumberjack can't close the existing used log file and then rename it.
 
-At this point, we decided to clone the Lumberjack and modify it and replace the os.Renamed calls and instead use the 
+At this point, we decided to clone the Lumberjack and modify it and replace the **os.Renamed** calls and instead use the 
 
 ```
 // Original os.Rename at line #222
