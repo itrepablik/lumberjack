@@ -36,35 +36,35 @@ Besides, the **copyFile** function:
 ```
 // copyFile copy a single file from the source to the destination.
 func copyFile(src, dst, bareDst string) error {
-	var err error
-	var srcfd *os.File
-	var dstfd *os.File
-	var srcinfo os.FileInfo
+var err error
+var srcfd *os.File
+var dstfd *os.File
+var srcinfo os.FileInfo
 
-	if srcfd, err = os.Open(src); err != nil {
-		fmt.Println(err)
-		return err
-	}
-	defer srcfd.Close()
+if srcfd, err = os.Open(src); err != nil {
+	fmt.Println(err)
+	return err
+}
+defer srcfd.Close()
 
-	os.MkdirAll(bareDst, os.ModePerm) // Create the dst folder if not exist
+os.MkdirAll(bareDst, os.ModePerm) // Create the dst folder if not exist
 
-	if dstfd, err = os.Create(dst); err != nil {
-		fmt.Println(err)
-		return err
-	}
-	defer dstfd.Close()
+if dstfd, err = os.Create(dst); err != nil {
+	fmt.Println(err)
+	return err
+}
+defer dstfd.Close()
 
-	if _, err = io.Copy(dstfd, srcfd); err != nil {
-		fmt.Println(err)
-		return err
-	}
+if _, err = io.Copy(dstfd, srcfd); err != nil {
+	fmt.Println(err)
+	return err
+}
 
-	if srcinfo, err = os.Stat(src); err != nil {
-		fmt.Println(err)
-		return err
-	}
-	return os.Chmod(dst, srcinfo.Mode())
+if srcinfo, err = os.Stat(src); err != nil {
+	fmt.Println(err)
+	return err
+}
+return os.Chmod(dst, srcinfo.Mode())
 }
 ```
 
