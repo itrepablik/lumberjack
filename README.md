@@ -13,13 +13,13 @@ The main reason why we have some modified version of the Lumberjack package beca
 
 In our case and usage, we have constantly rotating backup scheduler program that keeps logging every time, this issue occurs as the file can't be renamed because it's open and use by another program error and that's a strange issue that even the existing close file function of Lumberjack can't close the existing used log file and then rename it.
 
-At this point, we decided to clone the Lumberjack and modify it and replace the **os.Renamed** calls and instead use the 
+At this point, we decided to clone the Lumberjack and modify it and replace the existing **os.Renamed** calls at this line #222: 
 
 ```
 // Original os.Rename at line #222
 if err := os.Rename(name, newname); err != nil {
-			return fmt.Errorf("can't rename log file: %s", err)
-		}
+	return fmt.Errorf("can't rename log file: %s", err)
+}
 ```
 
 and replace it with:
@@ -28,7 +28,7 @@ and replace it with:
 logDir := filepath.Dir(name)
 dst := filepath.FromSlash(filepath.Join(logDir, filepath.Base(newname)))
 if err := copyFile(name, dst, logDir); err != nil {
- return fmt.Errorf("can't backup the current log file: %s", err)
+	return fmt.Errorf("can't backup the current log file: %s", err)
 }
 ```
 
