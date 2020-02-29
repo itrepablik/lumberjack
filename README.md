@@ -1,6 +1,8 @@
 
-The simplified and slightly modified version of [Lumberjack](https://github.com/natefinch/lumberjack) library that integrates nicely with the [Zap](https://github.com/uber-go/zap) library.
+The simplified and slightly modified version of [Lumberjack](https://github.com/natefinch/lumberjack) package that integrates nicely with the [Zap](https://github.com/uber-go/zap) sugarred logging which has a 4-10x faster than the other structured logging.
 
+Both Zap and Lumberjack simplified by the [ITRLog](https://github.com/itrepablik/itrlog) package.
+ 
 # Installation
 ```
 go get github.com/itrepablik/lumberjack
