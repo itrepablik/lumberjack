@@ -1,5 +1,5 @@
 
-The simplified and slightly modified version of Lumberjack](https://github.com/natefinch/lumberjack) library that integrates nicely with the [Zap](https://github.com/uber-go/zap) library.
+The simplified and slightly modified version of [Lumberjack](https://github.com/natefinch/lumberjack) library that integrates nicely with the [Zap](https://github.com/uber-go/zap) library.
 
 # Installation
 ```
