@@ -9,7 +9,7 @@ go get github.com/itrepablik/lumberjack
 ```
 
 # Modified Version of Lumberjack
-The main reason why we have some modified version of Lumberjack package is
+The main reason why we have some modified version of Lumberjack package because of this line [#222](https://github.com/natefinch/lumberjack/blob/v2.0/lumberjack.go) from the original source code of Lumberjack.  This function **openNew** will be executed during the log rotation which **renamed** the existing backup log file and then backup the 
 
 # License
 Code is distributed under MIT license, feel free to use it in your proprietary projects as well.
