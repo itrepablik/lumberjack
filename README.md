@@ -8,8 +8,8 @@ Both Zap and Lumberjack simplified by the [ITRLog](https://github.com/itrepablik
 go get github.com/itrepablik/lumberjack
 ```
 
-# Usage
-This is how you can use the simplified initializations for Zap and Lumberjack logging libraries.
+# Modified Version of Lumberjack
+The main reason why we have some modified version of Lumberjack package is
 
 # License
 Code is distributed under MIT license, feel free to use it in your proprietary projects as well.
