@@ -5,7 +5,7 @@ Both Zap and Lumberjack simplified by the [ITRLog](https://github.com/itrepablik
  
 # Installation
 ```
-go get github.com/itrepablik/lumberjack
+go get -u github.com/itrepablik/lumberjack
 ```
 
 # Modified Version of Lumberjack
