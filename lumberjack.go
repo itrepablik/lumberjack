@@ -568,7 +568,3 @@ func (b byFormatTime) Swap(i, j int) {
 func (b byFormatTime) Len() int {
 	return len(b)
 }
-
-func chown(_ string, _ os.FileInfo) error {
-	return nil
-}
