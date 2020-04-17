@@ -1,3 +1,3 @@
 module github.com/itrepablik/lumberjack
 
-go 1.13
+go 1.14
